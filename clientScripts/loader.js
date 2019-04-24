@@ -15,6 +15,7 @@
 	}
 
 	// Display mature content warning
+/*
 	if (!isBot && !localStorage.getItem("termsAccepted")) {
 		var confirmText =
 			"To access this website you understand and agree to the following:\n\n" +
@@ -28,6 +29,7 @@
 
 		localStorage.setItem("termsAccepted", "true");
 	}
+*/
 
 	// Really old browser. Run in noscript mode.
 	if (!window.WebAssembly) {
