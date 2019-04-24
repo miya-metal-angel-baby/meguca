@@ -49,8 +49,8 @@ var (
 		"uk_UA", "ru_RU",
 	}
 	Themes = []string{
-		"ashita", "console", "egophobe", "gar", "glass", "gowno", "higan",
-		"inumi", "mawaru", "moe", "moon", "ocean", "rave", "tavern", "tea", "win95",
+		"ashita", "console", "erowid", "tea", "futaba", "yotsuba", "yots_b",
+		"futuba", "fauux", "tachibana", "moon", "tianmen", "w95", "a_xr",
 	}
 )
 
