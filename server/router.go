@@ -88,6 +88,7 @@ func createRouter() http.Handler {
 	api := r.NewGroup("/api")
 	api.GET("/health-check", healthCheck)
 	assets := r.NewGroup("/assets")
+	txts := r.NewGroup("/txt")
 	if config.ImagerMode != config.NoImager {
 		// All upload images
 		api.POST("/upload", imager.NewImageUpload)
@@ -199,6 +200,10 @@ func createRouter() http.Handler {
 		assets.GET("/banners/:board/:id", serveBanner)
 		assets.GET("/loading/:board", serveLoadingAnimation)
 		assets.GET("/*path", serveAssets)
+
+		// text assets
+		// this is technically just an alias for /assets/
+		txts.GET("/*path", serveAssets)
 	}
 
 	h := http.Handler(r)
