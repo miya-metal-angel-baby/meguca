@@ -164,3 +164,17 @@ func SetPostCounter(c uint64) error {
 	_, err := db.Exec(`SELECT setval('post_id', $1)`, c)
 	return err
 }
+
+// IP must have at least 20 posts to create a thread
+// this stops new people from avoiding the main thread
+//func HasMinPosts(board, ip string) error {
+//	var count int
+//	err := sq.Select("count(*)").From("posts").Where("board = ? AND ip = ?", board, ip).QueryRow().Scan(&count)
+//	if err != nil {
+//		return err
+//	}
+//	if count < 10 {
+//		return common.ErrTooFewPosts
+//	}
+//	return nil
+//}

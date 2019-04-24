@@ -21,6 +21,7 @@ var (
 	ErrBanned              = ErrAccessDenied("you are banned from this board")
 	ErrTooManyConnections  = ErrAccessDenied("too many connections")
 	ErrNoPermissions       = ErrAccessDenied("insufficient permissions")
+//	ErrTooFewPosts	       = ErrAccessDenied("Shitposter Permit required to make new threads."
 
 	// The poster is almost certainly spamming
 	ErrSpamDected = ErrAccessDenied("spam detected")
