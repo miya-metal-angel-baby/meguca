@@ -410,7 +410,7 @@ func TestServerConfigSetting(t *testing.T) {
 	writeAdminAccount(t)
 
 	msg := config.Defaults
-	msg.DefaultCSS = "ashita"
+	msg.DefaultCSS = "tea"
 	rec, req := newJSONPair(t, "/api/configure-server", msg)
 	setLoginCookies(req, adminLoginCreds)
 	router.ServeHTTP(rec, req)
@@ -422,7 +422,7 @@ func TestServerConfigSetting(t *testing.T) {
 		t.Fatal(err)
 	}
 	std := config.Defaults
-	std.DefaultCSS = "ashita"
+	std.DefaultCSS = "tea"
 	AssertDeepEquals(t, conf, std)
 }
 
