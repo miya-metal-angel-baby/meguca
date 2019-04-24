@@ -50,7 +50,7 @@ var (
 	}
 	Themes = []string{
 		"ashita", "console", "erowid", "tea", "yotsuba", "yots_b",
-		"futuba", "fauux", "tachibana", "moon", "w95", "a_xr",
+		"futaba", "fauux", "tachibana", "moon", "w95", "a_xr",
 	}
 )
 
