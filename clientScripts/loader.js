@@ -44,7 +44,7 @@
 
 		var bc = document.getElementById("banner-center");
 		bc.classList.add("admin");
-		bc.innerHTML = "UPDATE YOUR FUCKING BROWSER";
+		bc.innerHTML = "Browser outdated. Running in no-script mode.";
 		return;
 	}
 
