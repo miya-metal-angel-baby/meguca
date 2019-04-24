@@ -23,6 +23,7 @@ var (
 		// max-age set to 350 days. Some caches and browsers ignore max-age, if
 		// it is a year or greater, so keep it a little below.
 		"Cache-Control": "max-age=30240000, public, immutable",
+		"Access-Control-Allow-Origin": "*",
 	}
 
 	// For overriding during tests
