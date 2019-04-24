@@ -1,12 +1,12 @@
 @import "common.mix.less";
 /* MAIN FONT COLOR */
-@body: black;
+@body: white;
 @bodyBG: white;
-@font-family: "MS Pゴシック", "MS PGothic", "Mona", "Hiragino Kaku Gothic Pro", monospace;
-@font-size: 0.7em;
+@font-family: Helvetica, Arial, sans-serif;
+@font-size: 1em;
 
 /* POST BODY */
-@postBG: white;
+@postBG: #3a3a3a;
 @border: 1px solid black;
 @postmargin: 0.1em;
 
@@ -15,7 +15,11 @@
 
 
 /* ALL LINKS */
-@link: blue;
+@link: #bee5d8;
+
+a {
+  color: @link;
+}
 
 a:hover {
   color: orange;
@@ -62,6 +66,7 @@ hr { border-top: 1px solid darkgray;}
 
 /* FONT */
 body {
+  color: @body;
   font-family: @font-family;
   background-color: @bodyBG;
   font-size: @font-size;
