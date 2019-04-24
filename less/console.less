@@ -1,182 +1,163 @@
 @import "common.mix.less";
-@body: #ccc;
-@link: white;
-@em: #b200b2;
-@del: white;
+
+/* MAIN FONT COLOR */
+@body: white;
+@bodyBG: black;
+@font-family: Monaco, "Andale Mono", Courier, monospace;
+@font-size: 0.7em;
+
+/* POST BODY */
 @postBG: black;
-@border: 1px solid white;
+@border: 1px solid gray;
+@postmargin: 0.2em;
+@setwidth: 50em;
+
+/*NAME (ANONYMOUS)*/
 @bold: white;
+
+/* LINKS */
+@link: lightsteelblue;
+@linkhover: lightgray;
+
+/* QUOTE LINK*/
+blockquote a { color: orange; }
+
+/* GREENTEXT */
+@em: lightgreen;
+
+/*OP SUBJECT*/
+@subject: greenyellow;
+
+/* POST BG/BORDER ON EDIT/HIGHLIGHT*/
+@postEDIT: blue;
+@postHL: #011a2b;
+
+/* BANNER */
+@bannerBG: black;
+@bannernav: white;
+
+/* BOARD NAME */
+@boardname: white;
+
+/* ADMIN NAMES */
 @admin: red;
-@mod: pink;
+@mod: purple;
 @red: @admin;
-@blue: #57e8ed;
 
-.act a {
-	color: white;
+/* HR */
+hr { border-top: 1px solid white; margin-top: 2em;}
+
+/* MAIN OPTIONS */
+@optionselect: orange;
+
+/* POST OPTIONS */
+@postoptBG: black;
+@postoptHOVER: darkblue;
+
+/* ?? */
+@del: white;
+@blue: blue;
+
+/* BODY */
+body {
+  font-family: @font-family;
+  color: @body;
+  background-color: @bodyBG;
+  font-size: @font-size;
+  margin-left: 2em;
 }
 
-a:hover, #sync {
-	color: #e50000;
+/* BG IMAGE
+body{
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: right bottom;
 }
+/**/
 
-article, aside {
-	margin: 0;
-	padding: 10pt;
-}
-
+/* HIGHLIGHT POSTED: SELECTED; EDITING */
 article {
-	form {
-		margin-top: 10pt;
-	}
 	&.highlight:not(.editing), &:target {
-		background-color: #222;
+		background-color: @postHL;
+		blockquote a { color: inherit; }
 	}
 	&.editing {
-		background-color: #0000b2;
+		background-color: @postEDIT;
+    border: 1px solid blue;
 		header, b {
 			color: white;
 		}
-	}
+	
 	article {
 		border: @border;
 	}
 }
-
-b {
-	font-weight: normal;
 }
 
-b.admin {
-	&, code {
-		background-color: #e50000;
-		color: black;
-	}
-}
-
-b.moderator {
-	&, code {
-		background-color: #00e500;
-		color: black;
-	}
-}
-
-blockquote {
-	margin: 10pt 0 0 0;
-	max-width: 80em;
-	a {
-		color: #00e5e5;
-	}
-	strong {
-		color: #00e500;
-		font-weight: normal;
-	}
-}
-
-header a {
-	color: #00a5b2;
-}
-
-body {
-	background-color: #050505;
-	margin: 0;
-	padding: 0;
-	font-family: Monaco, "Andale Mono", Courier, monospace;
-	font-size: 10pt;
-}
-
-.embed {
-	background-color: rgba(255, 255, 255, 0.25);
-	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	margin: 0;
-	padding: 0;
-}
-
-code {
-	color: #5833fe;
-}
-
-figcaption {
-	&, a {
-		color: #989800;
-		text-transform: lowercase;
-	}
-}
-
-header {
-	color: gray;
-}
-
-h1, h2 {
-	color: white;
-	font-size: inherit;
-	font-weight: bold;
-}
-
-h1 {
-	&:before {
-		content: "= ";
-	}
-	&:after {
-		content: " =";
-	}
-}
-
-h3 {
-	color: #0e0;
-}
-
-hr {
-	visibility: hidden;
+a:hover, #sync {
+	color: orange;
 }
 
 .popup-menu li:hover {
-	background-color: white;
-}
-
-.backlinks {
-	font-size: 10pt;
-	color: #444;
-	a {
-		color: #666;
-	}
-}
-
-.act, .omit {
-	color: #444;
-}
-
-.act:before {
-	content: ">";
-}
-
-.act:after {
-	content: "<";
+	background-color: @postoptHOVER;
 }
 
 .modal, .preview:not(.editing), .popup-menu {
-	border: @border;
-	background: black;
+	background-color: @postoptBG;
+	border: 1px solid white;
 }
 
-.preview {
-	&:not(.editing) {
-		background: black;
-	}
-	border: @border;
+a { color: @link; }
+a:hover { color: @linkhover; }
+
+em { color: @em}
+
+/* HEADER SETTINGS */
+h1 {
+  color: white;
+  font-weight:bold;
+	font-size: 1.2em;
 }
 
-// Override default with a fully opaque banner
-#banner {
-	background: black;
+h2 {
+}
+h3 {
+  color: @subject;
+}
+.act { color: @body; }
+
+/* STANDARD POST */
+article, aside {
+  color: @body;
+  background-color: @postBG;
+  border: @border;
+	margin-bottom: @postmargin;
+}
+
+article { width: @setwidth; }
+
+b {
+  color: @bold;
 }
 
 a.tab-sel {
-	outline: double;
+  color: @optionselect;
 }
 
-// Makes post more visible, because modals have the same background colour
-.post-collection article {
-	border: @border;
+/* HEADER LINKS*/
+#banner {
+  background: @bannerBG;
+  a {
+    color: @bannernav;
+  }
+}
+
+header nav a {
+  color: @bannernav;
+}
+
+.omit {
+  color: gray;
 }

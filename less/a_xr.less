@@ -1,12 +1,12 @@
 @import "common.mix.less";
 /* MAIN FONT COLOR */
-@body: white;
+@body: black;
 @bodyBG: white;
-@font-family: Helvetica, Arial, sans-serif;
-@font-size: 1em;
+@font-family: "MS Pゴシック", "MS PGothic", "Mona", "Hiragino Kaku Gothic Pro", monospace;
+@font-size: 0.7em;
 
 /* POST BODY */
-@postBG: #3a3a3a;
+@postBG: white;
 @border: 1px solid black;
 @postmargin: 0.1em;
 
@@ -15,11 +15,7 @@
 
 
 /* ALL LINKS */
-@link: #bee5d8;
-
-a {
-  color: @link;
-}
+@link: blue;
 
 a:hover {
   color: orange;
@@ -66,12 +62,9 @@ hr { border-top: 1px solid darkgray;}
 
 /* FONT */
 body {
-  color: @body;
   font-family: @font-family;
   background-color: @bodyBG;
   font-size: @font-size;
-  background-image: linear-gradient(white, #ffd1dc, #a6a1ed);
-  background-attachment: fixed;
 }
 
 /* BG IMAGE

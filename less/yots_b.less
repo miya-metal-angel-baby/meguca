@@ -1,77 +1,65 @@
 @import "common.mix.less";
 /* MAIN FONT COLOR */
-@body: white;
-@bodyBG: white;
-@font-family: Helvetica, Arial, sans-serif;
+@body: black;
+@bodyBG: #eef2ff;
+@font-family: Arial, Helvetica, sans-serif;
 @font-size: 1em;
 
 /* POST BODY */
-@postBG: #3a3a3a;
-@border: 1px solid black;
+@postBG: #d6daf0;
+@border: 1px solid #b7c5d9;
 @postmargin: 0.1em;
 
 /*NAME (ANONYMOUS)*/
-@bold: black;
-
+@bold: #117743;
 
 /* ALL LINKS */
-@link: #bee5d8;
+@link: #34345c;
 
-a {
-  color: @link;
-}
-
-a:hover {
-  color: orange;
-}
+a:hover { color: #d00; }
 
 /* GREENTEXT */
-@em: green;
+@em: #789922;
 
 /*OP SUBJECT*/
-@subject: purple;
+@subject: #0f0c5d;
 
 /* POST BG/BORDER ON EDIT/HIGHLIGHT*/
 @postEDIT: orange;
-@postHL: lightgray;
-@borderHL: inherit;
+@postHL: #d6bad0;
+@borderHL: #ba9dbf;
 
 /* BANNER */
-@bannerBG: white;
+@bannerBG: inherit;
 @bannernav: black;
 
 /* BOARD NAME */
 @boardname: red;
 
 /* ADMIN NAMES */
-@admin: red;
+@admin: #f00000;
 @mod: purple;
 @red: @admin;
 
 /* HR */
-hr { border-top: 1px solid darkgray;}
+hr { border-top: 1px solid #b7c5d9; }
 
 /* MAIN OPTIONS */
-@optionselect: orange;
+@optionselect: #117743;
 
 /* POST OPTIONS */
-@postoptBG: white;
-@postoptHOVER: lightgray;
-
+@postoptBG: #f5f5f5;
+@postoptHOVER: #f5f5f5;
 
 /* ?? */
 @del: black;
-@blue: blue;
+@blue: #1048ff;
 
-
-/* FONT */
+/* BODY */
 body {
-  color: @body;
   font-family: @font-family;
   background-color: @bodyBG;
   font-size: @font-size;
-  background-image: linear-gradient(white, #ffd1dc, #a6a1ed);
-  background-attachment: fixed;
 }
 
 /* BG IMAGE
@@ -88,6 +76,8 @@ body{
 /* POST OPTIONS MENU COLOR */
 .modal, .preview:not(.editing), .popup-menu {
   background-color: @postoptBG;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 /* POST OPTIONS MENU HIGHLIGHT */
 .popup-menu li:hover {
@@ -96,14 +86,14 @@ body{
 
 /* HEADER SETTINGS */
 h1 {
-  color: @boardname;
-  font-size: 2em;
-  /*text-shadow: #590030 1px 1px 0px;*/
-  letter-spacing: -2px;
+  color: #af0a0f;
+	font: bolder 2em Tahoma;
+	letter-spacing: -2px;
 }
 
 h2 {
-  color: red;
+  color: #af0a0f;
+	font-family: Tahoma;
 }
 h3 {
   color: @subject;
@@ -132,6 +122,10 @@ article {
   }
   &.editing {
     background-color: @postEDIT;
+    border-color: #e95;
+    article {
+      border: solid 1px #e95;
+    }
   }
 }
 
@@ -142,6 +136,7 @@ article {
     color: @bannernav;
   }
 }
+
 .omit {
   color: gray;
 }

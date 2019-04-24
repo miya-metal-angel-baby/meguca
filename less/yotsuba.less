@@ -2,18 +2,18 @@
 /* NOTE: MISSING SELECT COLOR */
 
 /* MAIN FONT COLOR */
-@body: #0a0a0a;
-@bodyBG: #f4ffee;
+@body: #800000;
+@bodyBG: #ffffee;
 @font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-size: 1em;
 
 /* POST BODY */
-@postBG: #d9f0d6;
-@border: 1px solid #b9d9b7;
+@postBG: #f0e0d6;
+@border: 1px solid #d9bfb7;
 @postmargin: 0.1em;
 
 /*NAME (ANONYMOUS)*/
-@bold: #1a8522;
+@bold: #117743;
 
 /* ALL LINKS */
 @link: #34345c;
@@ -25,11 +25,11 @@ blockquote a{ color: #54578c; }
 @em: #789922;
 
 /*OP SUBJECT*/
-@subject: #2f4d0c;
+@subject: #117743;
 
 /* POST BG/BORDER ON EDIT/HIGHLIGHT*/
-@postEDIT: orange;
-@postHL: #d6bad0;
+@postEDIT: offwhite;
+@postHL: #f0c0b0;
 
 /* BANNER */
 @bannerBG: inherit;
@@ -81,16 +81,16 @@ article {
   }
   &.highlight:not(.editing), &:target {
     background-color: @postHL;
-    border-color: #9fbf9d;
+    border-color: #d99f91;
     article {
-      border: solid 1px #9fbf9d;
+      border: solid 1px #d99f91;
     }
   }
   &.editing {
     background-color: @postEDIT;
-    border-color: #dbd1aa;
+    border-color: #d99f91;
     article {
-      border: solid 1px #dbd1aa;
+      border: solid 1px #d99f91;
     }
   }
 }
