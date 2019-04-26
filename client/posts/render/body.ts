@@ -525,6 +525,9 @@ function parseCommand(bit: string, { commands, state }: PostData): string {
         case "8ball":
             inner = escape(commands[state.iDice++].val.toString())
             break
+        case "iching":
+            inner = escape(commands[state.iDice++].val.toString())
+            break
         case "pyu":
         case "pcount":
             // Protect from index shifts on boardConfig.pyu toggle
@@ -589,6 +592,7 @@ function parseCommand(bit: string, { commands, state }: PostData): string {
     const commandMatchers: { [bit: string]: commandType } = {
         flip: commandType.flip,
         "8ball": commandType.eightBall,
+        "iching": commandType.Iching,
         pyu: commandType.pyu,
         pcount: commandType.pcount,
         rcount: commandType.rcount,

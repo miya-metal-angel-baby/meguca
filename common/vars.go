@@ -29,6 +29,7 @@ const (
 	MaxLenNotice       = 500
 	MaxLenRules        = 5000
 	MaxLenEightball    = 2000
+	MaxLenIching   	   = 2000
 	MaxLenReason       = 100
 	MaxNumBanners      = 20
 	MaxAssetSize       = 100 << 10
@@ -56,6 +57,6 @@ var (
 
 // Common Regex expressions
 var (
-	CommandRegexp = regexp.MustCompile(`^#(flip|\d*d\d+|8ball|pyu|pcount|sw(?:\d+:)?\d+:\d+(?:[+-]\d+)?|roulette|rcount)$`)
+	CommandRegexp = regexp.MustCompile(`^#(flip|\d*d\d+|8ball|iching|pyu|pcount|sw(?:\d+:)?\d+:\d+(?:[+-]\d+)?|roulette|rcount)$`)
 	DiceRegexp    = regexp.MustCompile(`(\d*)d(\d+)`)
 )
