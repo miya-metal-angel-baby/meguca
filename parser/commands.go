@@ -52,6 +52,13 @@ func parseCommand(match []byte, board string, thread uint64, id uint64, ip strin
 		if len(answers) != 0 {
 			com.Eightball = answers[randInt(len(answers))]
 		}
+	// Iching; select random string from the the Iching answer array
+	case bytes.Equal(match, []byte("Iching")):
+		com.Type = common.IChing
+		answers := boardConfig.IChing
+		if len(answers) != 0 {
+			com.Iching = answers[randInt(len(answers))]
+		}
 
 	// Increment pyu counter
 	case bytes.Equal(match, []byte("pyu")):

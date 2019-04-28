@@ -91,6 +91,7 @@ public:
         dice,
         flip,
         eight_ball,
+        i_ching,
         sync_watch,
         pyu,
         pcount,
@@ -103,6 +104,7 @@ public:
         std::array<uint16_t, 10>, std::array<uint8_t, 2>>
         val;
     std::string eight_ball; // Result of #8ball command
+    std::string i_ching; // Result of #iching command
 
     // Parse from JSON
     Command(nlohmann::json&);
