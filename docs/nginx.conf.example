@@ -18,23 +18,15 @@ map $http_upgrade $connection_upgrade {
 	'' close;
 }
 
-server {
-        listen 80;
-        server_name meguca.org images.meguca.org;
-        location /.well-known/ {
-                alias /home/meguca/server/www/.well-known/;
-        }
-        location / {
-                return 301 https://$server_name$request_uri;
-        }
-}
 
 server {
+	server_name chen2.org;
 # SSL
-	listen 443 ssl;
-	server_name meguca.org images.meguca.org;
-	ssl_certificate /etc/letsencrypt/live/meguca.org/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/meguca.org/privkey.pem;
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/chen2.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/chen2.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 # Gzip compression
 	gzip on;
@@ -63,7 +55,9 @@ server {
 #	set_real_ip_from 2803:f800::/32;
 #	set_real_ip_from 2c0f:f248::/32;
 #	set_real_ip_from 2a06:98c0::/29;
-#	real_ip_header X-Forwarded-For;
+#	real_ip_header CF-Connecting-IP;
+#
+#
 
 	location / {
 		proxy_pass http://meguca/;
@@ -119,4 +113,19 @@ server {
 #		proxy_pass http://imager;
 #		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 #	}
+
+}
+
+
+server {
+    if ($host = chen2.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+        listen 80;
+	server_name chen2.org *.chen2.org;
+    return 404; # managed by Certbot
+
+
 }
