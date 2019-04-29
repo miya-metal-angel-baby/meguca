@@ -76,6 +76,11 @@ func serveAssets(w http.ResponseWriter, r *http.Request) {
 	serveFile(w, r, cleanJoin(webRoot, extractParam(r, "path")))
 }
 
+func serveTextFile(w http.ResponseWriter, r *http.Request) {
+	base := cleanJoin(webRoot, "txt")
+	serveFile(w, r, cleanJoin(base, extractParam(r, "path")))
+}
+
 func serveFile(w http.ResponseWriter, r *http.Request, path string) {
 	file, err := os.Open(path)
 	if err != nil {

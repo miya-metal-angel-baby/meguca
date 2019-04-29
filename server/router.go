@@ -203,7 +203,7 @@ func createRouter() http.Handler {
 
 		// text assets
 		// this is technically just an alias for /assets/
-		txts.GET("/*path", serveAssets)
+		txts.GET("/*path", serveTextFile)
 	}
 
 	h := http.Handler(r)
