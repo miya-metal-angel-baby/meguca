@@ -186,6 +186,7 @@ const defaultFAQ = `Supported upload file types are JPEG, PNG, APNG, WEBM, MP3, 
 #d100 #2d100 - Roll dice
 #flip - Coin flip
 #8ball - An 8ball
+#roulette - Russian roulette
 #sw24:30 #sw2:24:30 #sw24:30+30 #sw24:30-30 - "Syncwatch" synchronized time counter`
 
 // Generate /all/ board configs
