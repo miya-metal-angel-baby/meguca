@@ -19,7 +19,7 @@ const (
 
 	// EightBall is the the #8ball random answer dispenser command type
 	EightBall
-	Iching
+	iching
 
 	// SyncWatch is the synchronized timer command type for synchronizing
 	// episode time during group anime watching and such
@@ -54,7 +54,7 @@ type Command struct {
 	Pyu       uint64
 	SyncWatch [5]uint64
 	Eightball string
-	Iching string
+	iching string
 	Dice      []uint16
 	Roulette  [2]uint8
 }

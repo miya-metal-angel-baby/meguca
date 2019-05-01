@@ -25,8 +25,6 @@ require (
 	github.com/gorilla/handlers v1.4.0
 	github.com/gorilla/websocket v1.4.0
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
-	github.com/klauspost/compress v1.5.0 // indirect
-	github.com/klauspost/cpuid v1.2.1 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/lib/pq v1.0.1-0.20190326042056-d6156e141ac6
 	github.com/otium/ytdl v0.5.1
@@ -34,12 +32,11 @@ require (
 	github.com/rakyll/statik v0.1.6
 	github.com/sevlyar/go-daemon v0.1.4
 	github.com/ulikunitz/xz v0.5.6
-	github.com/valyala/quicktemplate v1.1.1
-	golang.org/x/crypto v0.0.0-20190426145343-a29dc8fdc734
-	golang.org/x/net v0.0.0-20190424112056-4829fb13d2c6 // indirect
-	golang.org/x/sys v0.0.0-20190428183149-804c0c7841b5 // indirect
-	golang.org/x/text v0.3.2 // indirect
-	golang.org/x/tools v0.0.0-20190428024724-550556f78a90 // indirect
+	github.com/valyala/fasthttp v1.2.0 // indirect
+	github.com/valyala/quicktemplate v1.0.2
+	golang.org/x/crypto v0.0.0-20190404164418-38d8ce5564a5
+	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 // indirect
+	golang.org/x/sys v0.0.0-20190405154228-4b34438f7a67 // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/mholt/archiver.v2 v2.1.0
 )

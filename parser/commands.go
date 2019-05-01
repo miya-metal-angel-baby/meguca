@@ -54,8 +54,8 @@ func parseCommand(match []byte, board string, thread uint64, id uint64, ip strin
 		}
 	// Iching; select random string from the the Iching answer array
 	case bytes.Equal(match, []byte("Iching")):
-		com.Type = common.Iching
-		answers := boardConfig.Iching
+		com.Type = common.IChing
+		answers := boardConfig.IChing
 		if len(answers) != 0 {
 			com.Iching = answers[randInt(len(answers))]
 		}

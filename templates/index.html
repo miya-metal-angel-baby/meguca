@@ -156,6 +156,7 @@
 			{% endcomment %}
 			<span id="banner" class="glass">
 				<nav id="board-navigation">
+					<noscript>
 						[
 						{% for i, b := range boards %}
 							{% if i != 0 %}
@@ -166,6 +167,7 @@
 							</a>
 						{% endfor %}
 						]
+					</noscript>
 				</nav>
 				{% comment %}
 					For r/a/dio stream status and such
