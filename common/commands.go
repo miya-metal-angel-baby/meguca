@@ -19,7 +19,6 @@ const (
 
 	// EightBall is the the #8ball random answer dispenser command type
 	EightBall
-	iching
 
 	// SyncWatch is the synchronized timer command type for synchronizing
 	// episode time during group anime watching and such
@@ -54,7 +53,6 @@ type Command struct {
 	Pyu       uint64
 	SyncWatch [5]uint64
 	Eightball string
-	iching string
 	Dice      []uint16
 	Roulette  [2]uint8
 }
@@ -92,10 +90,6 @@ func (c Command) MarshalJSON() ([]byte, error) {
 		appendByte(']')
 	case EightBall:
 		b = strconv.AppendQuote(b, c.Eightball)
-
-	case Iching:
-		b = strconv.AppendQuote(b, c.Iching)
-
 	case Dice:
 		appendByte('[')
 		for i, v := range c.Dice {
@@ -150,9 +144,6 @@ func (c *Command) UnmarshalJSON(data []byte) error {
 	case EightBall:
 		c.Type = EightBall
 		err = json.Unmarshal(data, &c.Eightball)
-	case Iching:
-		c.Type = Iching
-		err = json.Unmarshal(data, &c.Iching)
 	case Dice:
 		c.Type = Dice
 		err = json.Unmarshal(data, &c.Dice)

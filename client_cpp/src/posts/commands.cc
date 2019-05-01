@@ -213,9 +213,6 @@ optional<Node> PostView::parse_commands(string_view word)
     } else if (name == "8ball") {
         check_consumed;
         inner = brunhild::escape(val.eight_ball);
-    } else if (name == "iching") {
-        check_consumed;
-        inner = brunhild::escape(val.i_ching);
     } else if (name == "pyu" || name == "pcount" || name == "rcount") {
         check_consumed;
 
