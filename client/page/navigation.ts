@@ -207,7 +207,25 @@ export default () => {
 		}
 	}
 	if (!selected.size) {
-		selected.add("all")
+		// by default, select all boards to watch
+		fetch("/html/board-navigation").then( r => {
+			r.text().then( text => {
+				if (r.status !== 200) {
+					throw text
+				}
+				const frag = makeFrag(text);
+				const boards = Array
+					.from(frag.querySelectorAll(".board input"))
+					.map(b =>
+						b.getAttribute("name"));
+				for (let b of boards) {
+					selected.add(b);
+				}
+				persistSelected();
+				navigation.render();
+			
+			});
+		});
 	}
 
 	// Start the module
