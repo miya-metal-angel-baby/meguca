@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"runtime/debug"
 	"strconv"
@@ -214,10 +215,20 @@ func createRouter() http.Handler {
 	return h
 }
 
-// Redirects to / requests to /all/ board
+// requests to / now serve the index page html
 func redirectToDefault(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/all/", 301)
+       serveIndexHTML(w, r);
 }
+
+func serveIndexHTML(w http.ResponseWriter, r *http.Request) {
+	html, err := ioutil.ReadFile("www/index.html");
+	if err != nil {
+		http.Error(w, "index not found.", 404)
+	}
+	w.Header().Set("Content-Type", "text/html");
+	fmt.Fprintf(w, "%s", html);
+}
+
 
 // Generate a robots.txt with only select boards preventing indexing
 func serveRobotsTXT(w http.ResponseWriter, r *http.Request) {

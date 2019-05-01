@@ -49,10 +49,14 @@ func newFileError(h *multipart.FileHeader, msg string) error {
 // (except deletion), so we can also set separate caching policies for them.
 func serveImages(w http.ResponseWriter, r *http.Request) {
 	path := extractParam(r, "path")
+
 	file, err := os.Open(cleanJoin(imageWebRoot, path))
 	if err != nil {
-		text404(w)
-		return
+		file, err = os.Open(cleanJoin(imageWebRoot, "missing.gif"))
+		if err != nil {
+			text404(w)
+			return
+		}
 	}
 	defer file.Close()
 
