@@ -276,7 +276,7 @@ td {
 	#threads {
 		padding: 1em 0.3em;
 	}
-	#sync, .image-banner, #banner-feedback, #banner-account {
+	#sync, #banner-feedback, #banner-account {
 		display: none;
 	}
 	#post-controls  {
@@ -287,6 +287,33 @@ td {
 @media screen and (max-width: 475px) {
 	#thread-post-counters {
 		display: none;
+	}
+	#board-navigation {
+		color: transparent;
+	}
+	#board-navigation a[href*="/"] {
+		display: none;
+	}
+	#board-navigation a[href*="/all/"]:before {
+		content:"[";
+	}
+	#board-navigation a[href*="/all/"] {
+		display: inline;
+	}
+	#board-navigation a[href*="/all/"]:after {
+		content:"]";
+	}
+	#board-navigation .board-selection {
+		display: inline;
+		position: absolute;
+		top: 2.25px;
+		left: 30px;
+	}
+	#board-navigation .board-selection:before {
+		content:"[";
+	}
+	#board-navigation .board-selection:after {
+		content:"]";
 	}
 }
 
