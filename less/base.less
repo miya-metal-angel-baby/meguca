@@ -285,6 +285,32 @@ td {
 }
 
 @media screen and (max-width: 475px) {
+	body {
+		margin: 1px 0;
+	}
+	figure {
+		padding: 0;
+	}
+	img.expanded {
+		margin: 0;
+	}
+	blockquote {
+		margin: 0.5em 0 0.5em 0.5em;
+		min-width: 15em;
+	}
+	#banner {
+	font-size: 0.7em;
+	}
+	#threads {
+		padding: 1em 0.3em;
+	}
+	#sync, #banner-feedback, #banner-account {
+		display: none;
+	}
+	#post-controls  {
+		width: 100%;
+	}
+
 	#thread-post-counters {
 		display: none;
 	}
@@ -306,9 +332,9 @@ td {
 	#board-navigation .board-selection {
 		display: inline;
 		position: absolute;
-		top: 2.25px;
-		left: 30px;
-	}
+		top: 0.25em;
+		left: 4em;
+}
 	#board-navigation .board-selection:before {
 		content:"[";
 	}
